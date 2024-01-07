@@ -51,15 +51,15 @@
     if (navigator.canShare) {
       const shareData = {
         title: title,
-        text: 'I found a cool photo over at {{ site.env.TITLE | smartify }}! Check it out!',
+        text: '{{ site.env.TITLE | smartify }}',
         url: url
       }
       navigator.share(shareData)
     } else {
-      navigator.clipboard.writeText(`I found a cool photo over at {{ site.env.TITLE | smartify }}! Check it out!\n\n${window.location.origin}${url}`);
+      navigator.clipboard.writeText(`\n\n${window.location.origin}${url}`);
       Toastify({
-        text: "Copied to clipboard",
-        duration: 3000,
+        text: "复制到剪贴板",
+        duration: 1000,
         style: {
           background: "rgba(0, 0, 0, 0.7)"
         }

@@ -21,23 +21,23 @@
     <a class="close" href="{{ '/' | relative_url }}">Close</a>
     {% unless forloop.first %}
         {% assign previous_slug = images[previous_index].name | strip_extension | slugify %}
-        <a href="{{ previous_slug | relative_url }}" data-target="id-{{ previous_slug }}" class="previous" title="Go to previous photo">
+        <a href="{{ previous_slug | relative_url }}" data-target="id-{{ previous_slug }}" class="previous" title="上一张图片">
             <span>Previous</span>
         </a>
     {% endunless %}
 
     {% unless forloop.last %}
         {% assign next_slug = images[next_index].name | strip_extension | slugify %}
-        <a href="{{ next_slug | relative_url }}" data-target="id-{{ next_slug }}" class="next" title="Go to next photo">
+        <a href="{{ next_slug | relative_url }}" data-target="id-{{ next_slug }}" class="next" title="下一张图片">
             <span>Next</span>
         </a>
     {% endunless %}
     <ul class="links top photodetail-links">
         {% if site.env.ALLOW_IMAGE_SHARING == "1" %}
-            <li class="share"><a onClick="shareImage('{{ image.basename }}','{{ slug | relative_url }}');" title="Share this photo">Share</a></li>
+            <li class="share"><a onClick="shareImage('{{ image.basename }}','{{ slug | relative_url }}');" title="复制图片链接">Share</a></li>
         {% endif %}
         {% if site.env.ALLOW_ORIGINAL_DOWNLOAD == "1" %}
-            <li class="download"><a href="{{ image.path }}" download="{{ safe_name }}" class="" title="Download this image">Download</a></li>
+            <li class="download"><a href="{{ image.path }}" download="{{ safe_name }}" class="" title="下载图片">Download</a></li>
         {% endif %}
     </ul>
 
@@ -48,10 +48,10 @@
         <li><span class="aperture"><em>f</em>/</span>{{ image_path | exif: 'aperture_value'}}</li>
         -->
         {% if site.env.ALLOW_IMAGE_SHARING == "1" %}
-            <li><a onClick="shareImage('{{ image.basename }}', '{{ slug | relative_url }}')" class="gridview-button share" title="Share this image">Share</a></li>
+            <li><a onClick="shareImage('{{ image.basename }}', '{{ slug | relative_url }}')" class="gridview-button share" title="复制图片链接">Share</a></li>
         {% endif %}
         {% if site.env.ALLOW_ORIGINAL_DOWNLOAD == "1" %}
-            <li><a href="{{ image.path }}" download="{{ safe_name }}" class="gridview-button download" title="Download this image">Download</a></li>
+            <li><a href="{{ image.path }}" download="{{ safe_name }}" class="gridview-button download" title="下载图片">Download</a></li>
         {% endif %}
     </ul>
 </li>

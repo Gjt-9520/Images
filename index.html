@@ -21,10 +21,10 @@
 		</ul>
 		<ul class="links bottom">
 			{% if site.env.ALLOW_ORDER_SORT_CHANGE == "1" %}
-			<li class="sort"><a rel="me" href="#" title="Reverse sort order">Sort</a></li>
+			<li class="sort"><a rel="me" href="#" title="切换顺序">Sort</a></li>
 			{% endif %}
 			{% if site.env.SHOW_RSS_FEED == "1" %}
-			<li class="rss"><a rel="alternate" type="application/rss+xml" href="{{ site.env.URL }}" title="Blog">Blog</a></li>
+			<li class="rss"><a rel="alternate" type="application/rss+xml" href="{{ site.env.URL }}" title="博客">博客</a></li>
 			{% endif %}
 			{% if site.env.SHOW_OFFICIAL_GITHUB == "1" %}
 			<li class="github"><a rel="me" href="https://github.com/Gjt-9520/Images" title="Github">Github</a></li>
